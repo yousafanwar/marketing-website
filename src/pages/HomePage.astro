@@ -1,0 +1,102 @@
+<section>
+
+<div class="full-width-container">
+    <div class="content">
+        <h1 class="heading-top">Vertex Edge Technologies</h1>
+        <p class="heading-top1">Igniting Growth, Maximizing Reach</p>
+    </div>
+</div>
+</section>
+
+<!-- Section 2 -->
+<section class="section-2">
+    <div class="col-6 section-2-img-container">
+        <img src="image-2.jpg" class="img-fluid" alt="Digital Marketing">
+    </div> 
+    <div class="col-6 section-2-text-container">
+        <div class="text-wrap fs-4 text-center">
+            <h2>Unlock Online Success</h2>        
+            <p>Maximize Your Business's Potential</p>
+            Elevate your business ROI to new heights with our exceptional suite of digital marketing solutions, including Search Engine Optimization (SEO), Paid Advertising Campaigns, and Social Media Management. Our comprehensive services are meticulously designed to position your business prominently across search engines and various digital platforms.</p>
+            <p>Prepare to <span class="highlight">conquer the realm of Digital Marketing</span> with our diverse array of offerings. Your online success story starts here.</p>
+
+        
+        <button type="button" class="btn btn-outline-dark">Learn More</button>
+    </div>
+    </div>
+
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+            root: null, // use the viewport as the container
+            rootMargin: "0px",
+            threshold: 0, // trigger when 50% of the target is visible
+        };
+
+        let observedElement = document.querySelector(".content");
+
+        let observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("contentAlign");
+                    entry.target.classList.remove("content");
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(observedElement);
+    });
+</script>
+
+<style>
+    .contentAlign {
+        transform: translateX(0);
+        transition: ease 1.5s;
+    }
+    .content {
+        transform: translateX(-400px);
+    }
+    .full-width-container {
+        background-image: url("Poster1.png");
+        width: 100%;
+        height: 100vh;
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent image repetition */
+    }
+    .heading-top{
+          color: white;
+        font-family: "Sans-serif", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        padding-top: 60vh;
+    }
+    .heading-top1{
+          color: white;
+        font-family: "Sans-serif", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+    .section-2{
+        display: flex;
+    }
+    .section-2-div{
+        /* padding-left: 18vw;
+        padding-right: 18vw; */
+        text-align: center;
+    }
+    /* .section-2-img{
+        max-width: 80%;
+        height: auto;
+    }
+    .section-2-img-container{
+        justify-content: center;
+
+    } */
+     .section-2-text-container{
+        margin-top: 35vh;
+        padding: 20px;
+        /* max-width: 55vw; */
+        border: solid black;
+     }
+</style>
